@@ -17,9 +17,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3 fixed-top">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Shop" asp-action="Index">Casualhub</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Shop" asp-action="Index">HomemadeKitchen</a>
                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -27,19 +27,35 @@
                 </button>
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
                     <partial name="_LoginPartial.cshtml" />
 
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Shop" asp-action="Index">Shop</a>
+                            <a class="nav-link text-light btn-outline-secondary rounded" asp-area="" asp-controller="Shop" asp-action="Index">Головна</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Shop" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-light btn-outline-secondary rounded" asp-area="" asp-controller="Shop" asp-action="Privacy">Конфідеційність</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Basket" asp-action="Index">Basket</a>
+                            <a class="nav-link text-light btn-outline-secondary rounded" asp-area="" asp-controller="Basket" asp-action="Index">Корзина</a>
                         </li>
                     </ul>
+
+                    @if(ViewBag.Categories!= null)
+                    {
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Категорії
+                        </button>
+                        <div class="dropdown-menu bg-secondary" aria-labelledby="dropdownMenuButton">
+                            @foreach (var item in ViewBag.Categories)
+                            {
+                                <a href="?category=@item.Id&tag=0" class="dropdown-item">@item.Name</a>
+                            }                            
+                        </div>
+                    </div>
+                    }
 
                 </div>
             </div>
