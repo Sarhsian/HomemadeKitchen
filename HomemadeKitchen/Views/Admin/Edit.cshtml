@@ -1,52 +1,52 @@
 ﻿@model CasualShop.DAL.Entities.Dishes
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Редагувати";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Редагувати</h1>
 
-<h4>Clothes</h4>
+<h4>Страви</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">        
             <form asp-action="Edit" enctype="multipart/form-data">
                 <fieldset>
-                    <legend>Clothes</legend>
+                    <legend>Страви</legend>
 
                     @Html.HiddenFor(model => model.Id)
 
                     <p>
-                        Clothes <br />
+                        Страви <br />
                         @Html.EditorFor(model => model.Name)
                     </p>
 
                     <p>
-                        Price <br />
+                        Ціна <br />
                         @Html.EditorFor(model => model.Price)
                     </p>
 
                     <p>
-                        Description  <br />
+                        Опис  <br />
                         @Html.EditorFor(model => model.Description)
                     </p>
                     <p>
-                        Brands <br />
+                        Категорії <br />
                         @Html.DropDownListFor(model => model.CategoryId, ViewBag.Brands as SelectList)
                     </p>
-                    <p>
+                    @*<p>
                         Tags <br />
                         @Html.DropDownListFor(model => model.TagId, ViewBag.Tags as SelectList)
-                    </p>
+                    </p>*@
                     <p>
                         <div class="form-group">
-                            <label asp-for="Image.Title"></label>
+                            <label >Назва фото</label>
                             <input asp-for="Image.Title" accept="image/*" />
                             <span asp-validation-for="Image.Title" class="text-danger"></span>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Image.ImageFile"></label>
+                            <label >Назва файлу фото</label>
                             <input asp-for="Image.ImageFile" accept="image/*" />
                             <span asp-validation-for="Image.ImageFile" class="text-danger"></span>
                         </div>
@@ -63,7 +63,7 @@
                         }
                     </p>
                     <p>
-                        <input type="submit" value="Save" />
+                        <input type="submit" value="Зберегти" />
                     </p>
                 </fieldset>
                 </form>               
@@ -71,7 +71,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Повернутись до списку</a>
 </div>
 
 @section Scripts {

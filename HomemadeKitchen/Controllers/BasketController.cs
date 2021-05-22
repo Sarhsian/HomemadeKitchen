@@ -61,14 +61,14 @@ namespace CasualShop.Controllers
                     if (item.CurrentUser == basketCurrentUserId && item.isProcessed == false)
                     {
                         var DishesModel = _servicesManager.Dishes.GetDishesModelById(item.DishesId);
-                        emailText = emailText + "<div>Dishes name: " + DishesModel.Name + " Price:" + DishesModel.Price + "$</div>";
+                        emailText = emailText + "<div>Dishes name: " + DishesModel.Name + " Price:" + DishesModel.Price + " (UAH)</div>";
                         totalPrice += DishesModel.Price;
                         item.isProcessed = true;
                     }
                     _servicesManager.Baskets.UpdateBasketsDtoToDb(item);
                 }
                 emailText += "<div style=\"font-weight:bold\">Total price: " + totalPrice.ToString() + "</div></div>";
-                emailService.SendEmail(orderInfoDto.Email, "CasualShop Order",
+                emailService.SendEmail(orderInfoDto.Email, "HomemadeKitchen Order",
                     emailText);
                 return RedirectToAction("Index", "Shop");            
         }

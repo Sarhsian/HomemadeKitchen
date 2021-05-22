@@ -45,7 +45,7 @@ namespace CasualShop.BLL.Services
                     DishesCategory = new CategoryDto() { Id = _dishes.Category.Id, Name = _dishes.Category.Name },
                     Description = _dishes.Description,
                     Price = _dishes.Price,
-                    Tag = new TagDto { Id = _dishes.Tag.Id, Name = _dishes.Tag.Name }
+                    //Tag = new TagDto { Id = _dishes.Tag.Id, Name = _dishes.Tag.Name }
                 };
             }
             else
@@ -58,7 +58,7 @@ namespace CasualShop.BLL.Services
                     Description = _dishes.Description,
                     Price = _dishes.Price,
                     Image = new ImageDto() { Id = _dishes.Image.Id, Title = _dishes.Image.Title, ImageName = _dishes.Image.ImageName },
-                    Tag = new TagDto { Id = _dishes.Tag.Id, Name = _dishes.Tag.Name }
+                    //Tag = new TagDto { Id = _dishes.Tag.Id, Name = _dishes.Tag.Name }
                 };
             }
         }

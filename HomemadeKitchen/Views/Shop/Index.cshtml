@@ -120,42 +120,42 @@
 
             <div>
                 <div class="row">
-                    @foreach (var clothes in Model)
+                    @foreach (var dishes in Model)
                     {
                         <div class="col-6 col-lg-4 p-2 d-flex align-items-stretch card-margin">
                             <div class="card text-white bg-dark mb-3">
                                     <div class="embed-responsive embed-responsive-16by9">                                   
-                                        @if (clothes.Image == null)
+                                        @if (dishes.Image == null)
                                         {
                                             <img class="card-img-top embed-responsive-item rounded" src="https://investfuture.ru/images/no_img.jpeg" />
                                         }
                                         else
                                         {
-                                            <img class="card-img-top embed-responsive-item rounded" src="@("~/Image/" + clothes.Image.ImageName)"
+                                            <img class="card-img-top embed-responsive-item rounded" src="@("~/Image/" + dishes.Image.ImageName)"
                                                  asp-append-version="true" />
                                         }                                        
                                     </div>
                                 <div class="card-header">
-                                    @clothes.Name
+                                    @dishes.Name
                                 </div>
                                 <div class="card-body">
                                     <div class="card-text">
-                                        @if (clothes.Description.Length > 50)
+                                        @if (dishes.Description.Length > 50)
                                         {
-                                            <div>@clothes.Description.Substring(0, 50)...</div>
+                                            <div>@dishes.Description.Substring(0, 50)...</div>
                                         }
                                         else
                                         {
-                                            <div>@clothes.Description</div>
+                                            <div>@dishes.Description</div>
                                         }
                                     </div>
                                     <div class="card-text">
-                                        Price: @clothes.Price $
+                                        Price: @dishes.Price UAH
                                     </div>
                                 </div>
                                 <div class="card-footer">
-                                    <button onclick="location.href='@Url.Action("ClothesInfo","Shop",new {id = clothes.Id })'" class="btn border-warning text-warning">
-                                        BUY
+                                    <button onclick="location.href='@Url.Action("ClothesInfo","Shop",new {id = dishes.Id })'" class="btn border-warning text-warning">
+                                        Купити
                                     </button>
 
                                 </div>

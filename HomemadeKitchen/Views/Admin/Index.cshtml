@@ -12,10 +12,10 @@
 </style>
 
 
-<h1>Admin panel</h1>
+<h1>Панель адміна</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Створити новий</a>
 </p>
 <table class="table tbl_style">
     <thead>
@@ -32,9 +32,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Category)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Tag)
-            </th>
+            </th>*@
             <th>
                 Image @Html.DisplayNameFor(model => model.Image.Title)
             </th>            
@@ -56,16 +56,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Category.Name)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Tag.Name)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Image.Title)
             </td>           
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редагувати</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Деталі</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Видалити</a>
             </td>
         </tr>
 }
